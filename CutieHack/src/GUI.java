@@ -1,4 +1,3 @@
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
@@ -14,10 +13,11 @@ public class GUI extends JFrame{
 	Point pos = new Point();
 	final long startTime = System.nanoTime();
 	JButton drawingThing = new JButton();
+	JButton equationThig = new JButton();
+
 	Object lock = new Object();
 	public GUI() {
 		setPreferredSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
-		Container cp = getContentPane();
 		setDefaultCloseOperation(EXIT_ON_CLOSE); 
 		setLayout(null);
 		pack();  
@@ -34,11 +34,29 @@ public class GUI extends JFrame{
 
 			@Override
 			public void mousePressed(MouseEvent arg0) {
-				DrawingGUI g = new DrawingGUI();
+				new DrawingGUI();
 			}	
 
 		});
+		equationThig.setBounds(30, 0, 30, 30);
+		equationThig.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {}
+			@Override
+			public void mouseExited(MouseEvent arg0) {}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {}
+			
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				new EquationVisualizer();
+			}	
+			
+		});
 		this.add(drawingThing);
+		this.add(equationThig);
 		setVisible(true);
 	}
 	

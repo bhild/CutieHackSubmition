@@ -22,14 +22,13 @@ public class DrawingGUI extends JFrame implements MouseListener{
 	ArrayList<Point> posArr = new ArrayList<Point>();
 	volatile private boolean isRunning = false;
 	final long startTime = System.nanoTime();
-	
 	public DrawingGUI() {
 		setPreferredSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
 		canvas = new DrawCanvas();   
 		canvas.setPreferredSize(new Dimension(FRAME_HEIGHT, FRAME_HEIGHT));
 		Container cp = getContentPane();
 		cp.add(canvas);
-		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
 		pack();  
 		setVisible(true);
 		addMouseListener(this);

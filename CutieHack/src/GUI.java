@@ -28,12 +28,7 @@ public class GUI extends JFrame implements KeyListener{
 		@Override
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);  
-			for (int i = 0; i < 100; i++) {
-				for (int j = 0; j < 10; j++) {
-					g.drawRect(i*20, j*40, 20, 40);
-				}
-			}
-			g.setColor(Color.blue);
+			
 		}
 	}
 	@Override

@@ -14,6 +14,8 @@ public class GUI extends JFrame{
 	JButton drawingThing = new JButton();
 	JButton equationThing = new JButton();
 	JButton calcThing = new JButton();
+	JButton simpleAnimation = new JButton();
+
 	public GUI() {
 		setPreferredSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
 		setDefaultCloseOperation(EXIT_ON_CLOSE); 
@@ -73,9 +75,28 @@ public class GUI extends JFrame{
 			}	
 			
 		});
+		simpleAnimation.setBounds(0, 150, 300, 50);
+		simpleAnimation.setText("Click me animation bassed in an equation");
+		simpleAnimation.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {}
+			@Override
+			public void mouseExited(MouseEvent arg0) {}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {}
+			
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				new SimpleAnimation();
+			}	
+			
+		});
 		this.add(drawingThing);
 		this.add(equationThing);
 		this.add(calcThing);
+		this.add(simpleAnimation);
 		setVisible(true);
 	}
 	

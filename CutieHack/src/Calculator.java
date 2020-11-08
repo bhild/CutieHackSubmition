@@ -170,7 +170,6 @@ public class Calculator extends JFrame{
 	private void doMultDiv() {
 		for (int i = 1; i < values.size()-1; i++) {
 			if (values.get(i).equals("*")) {
-				System.out.println(Double.parseDouble(values.get(i-1))+","+Double.parseDouble(values.get(i+1)));
 				double temp = Double.parseDouble(values.get(i-1))*Double.parseDouble(values.get(i+1));
 				values.remove(i-1);
 				values.remove(i-1);

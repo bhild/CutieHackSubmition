@@ -56,10 +56,7 @@ public class Calculator extends JFrame{
 				@Override
 				public void mouseEntered(MouseEvent arg0) {}
 				@Override
-				public void mousePressed(MouseEvent arg0) {}
-				@Override
-				public void mouseClicked(MouseEvent arg0) {
-					// TODO Auto-generated method stub
+				public void mousePressed(MouseEvent arg0) {
 					try {
 						values.set(indexVal, values.get(indexVal)+val);
 					} catch (Exception e) {
@@ -67,6 +64,11 @@ public class Calculator extends JFrame{
 					}
 					ta1.setText(values.toString().replaceAll("[^-0-9.*/+]", ""));
 				}
+				@Override
+				public void mouseClicked(MouseEvent arg0) {
+					// TODO Auto-generated method stub
+				}
+					
 			});
 		}
 		for (int i = 0; i < operations.length; i++) {
@@ -81,10 +83,7 @@ public class Calculator extends JFrame{
 				@Override
 				public void mouseEntered(MouseEvent arg0) {}
 				@Override
-				public void mousePressed(MouseEvent arg0) {}
-				@Override
-				public void mouseClicked(MouseEvent arg0) {
-					// TODO Auto-generated method stub
+				public void mousePressed(MouseEvent arg0) {
 					try {
 						if(values.get(indexVal).replaceAll("[0-9.]", "").equals("")) {
 							values.add(operations[val].getText());
@@ -95,6 +94,8 @@ public class Calculator extends JFrame{
 					}
 					ta1.setText(values.toString().replaceAll("[^-0-9.*/+]", ""));
 				}
+				@Override
+				public void mouseClicked(MouseEvent arg0) {}
 			});
 			add(operations[i]);
 		}
@@ -108,13 +109,11 @@ public class Calculator extends JFrame{
 				@Override
 				public void mouseEntered(MouseEvent arg0) {}
 				@Override
-				public void mousePressed(MouseEvent arg0) {}
-				@Override
-				public void mouseClicked(MouseEvent arg0) {
-					// TODO Auto-generated method stub
+				public void mousePressed(MouseEvent arg0) {
 					values.clear();
-					ta1.setText(values.toString().replaceAll("[^-0-9.*/+]", ""));
-				}
+					ta1.setText(values.toString().replaceAll("[^-0-9.*/+]", ""));}
+				@Override
+				public void mouseClicked(MouseEvent arg0) {}
 		});
 		decimal.setBounds(300, 300, 50, 50);
 		decimal.setText(".");
@@ -126,10 +125,7 @@ public class Calculator extends JFrame{
 				@Override
 				public void mouseEntered(MouseEvent arg0) {}
 				@Override
-				public void mousePressed(MouseEvent arg0) {}
-				@Override
-				public void mouseClicked(MouseEvent arg0) {
-					// TODO Auto-generated method stub
+				public void mousePressed(MouseEvent arg0) {
 					try {
 						values.set(indexVal, values.get(indexVal)+".");
 					} catch (Exception e) {
@@ -137,6 +133,8 @@ public class Calculator extends JFrame{
 					}
 					ta1.setText(values.toString().replaceAll("[^-0-9.*/+]", ""));
 				}
+				@Override
+				public void mouseClicked(MouseEvent arg0) {}
 		});
 		operations[0].setText("+");
 		operations[1].setText("-");

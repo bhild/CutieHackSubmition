@@ -19,7 +19,8 @@ public class GUI extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE); 
 		setLayout(null);
 		pack();  
-		drawingThing.setBounds(0, 0, 30, 30);
+		drawingThing.setBounds(0, 0, 300, 50);
+		drawingThing.setText("Click me for a dawing notepad");
 		drawingThing.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {}
@@ -36,7 +37,8 @@ public class GUI extends JFrame{
 			}	
 
 		});
-		equationThing.setBounds(30, 0, 30, 30);
+		equationThing.setBounds(0, 50, 300, 50);
+		equationThing.setText("Click me for an equation visualizer");
 		equationThing.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {}
@@ -53,7 +55,8 @@ public class GUI extends JFrame{
 			}	
 			
 		});
-		calcThing.setBounds(60, 0, 30, 30);
+		calcThing.setBounds(0, 100, 300, 50);
+		calcThing.setText("Click me for a simple Calculator");
 		calcThing.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {}

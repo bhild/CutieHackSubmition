@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
@@ -15,10 +16,13 @@ public class EquationVisualizer extends JFrame {
 	private static final int CANVAS_HEIGHT = 401;
 	double X;
 	double R;
+	JOptionPane pane = new JOptionPane();
 	private DrawCanvas canvas;
 	public EquationVisualizer() {
-		X = .44;
-		R =3.98;
+		X = Double.parseDouble(JOptionPane.showInputDialog(pane,
+                "Enter a popluation size (from .1 to .9)", .9));
+		R = Double.parseDouble(JOptionPane.showInputDialog(pane,
+                "Enter a rate of change (from .1 to 4 number between 3 and 4 are best)", 3.57));
 		canvas = new DrawCanvas();   
 		canvas.setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT));
 		Container cp = getContentPane();
@@ -46,7 +50,6 @@ public class EquationVisualizer extends JFrame {
 	private static class Equation {
 		public static double equation(double x,double r,int j) {
 			double temp = x;
-			double a = 1-x;
 			for (int i = 0; i < j; i++) {
 				temp = temp*r*(1-temp);
 			}
